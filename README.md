@@ -30,6 +30,7 @@ And than we can run a trigger wich will execute the code buy triggering
 ## TODO
 - [ ] namespacing : es. triggering "updated" will trigger "updated.namespace"
 - [ ] refactoring : there is always space to improvement!
+- [ ] once : trigger the function or filter just once
 - [x] debug : console log events and action perfomed
 - [x] filter system : triggers and events and passes the result allowing to change value
 - [x] failure handler : every action is run in try-catch mode so the chain wont be broken
