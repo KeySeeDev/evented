@@ -1,8 +1,9 @@
 # eventer.js
 Javascript events witouth any DOM overheat
+Inspired by Wordpress hooks system and jQuery
 
 ## So what we can do?
-
+This library will allow you to trigger custom events and filter data in kinda Wordpress fashion!
 
 ### Do actions, the output will not be changed
 First we need to declare listners
