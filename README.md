@@ -16,8 +16,13 @@ And than we can run a trigger wich will execute the code buy triggering
 
 
      
-### Do action and change the output
+### Do action and change the output (or FILTER)
+First we need to declare listners
+
 `Eventer.add_filter('test', function(data) { data.addme += 2; return data; });`
+`Eventer.add_filter('test', function(data) { data.addme += 2; return data; });`
+
+And than we can run a trigger wich will execute the code buy triggering
 `Eventer.filter('test', [{addme: 5, deleteme: true}]);`
 
 
