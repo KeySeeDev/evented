@@ -8,6 +8,9 @@ Javascript events witouth any DOM overheat
 First we need to declare listners
 
 `Eventer.on('test', function(e,a,b,c,d,e,f,g) { console.log(e,a,b,c,d,e,f,g);});`
+
+`Eventer.on('test', function(e,a,b,c,d,e,f,g) { console.log('Second',e,a,b,c,d,e,f,g);});`
+
 `Eventer.on('test', function() { console.log(arguments);});`
 
 And than we can run a trigger wich will execute the code buy triggering
@@ -20,7 +23,8 @@ And than we can run a trigger wich will execute the code buy triggering
 First we need to declare listners
 
 `Eventer.add_filter('test', function(data) { data.addme += 2; return data; });`
-`Eventer.add_filter('test', function(data) { data.addme += 2; return data; });`
+
+`Eventer.add_filter('test', function(data) { data.addme += 5; return data; });`
 
 And than we can run a trigger wich will execute the code buy triggering
 
