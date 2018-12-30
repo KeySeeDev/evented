@@ -21,9 +21,9 @@ This library will allow you to trigger custom events and filter data in kinda Wo
 ### Do actions, the output will not be changed
 First we need to declare listeners
 
-`Eventer.on('test', function(e,a, b,c, d,e, f,g) {console.log(e,a,b,c, d,e, f,g);});`
+`Eventer.on('test', function(e,a,b,c,d,e,f) {console.log(e,a,b,c,d,e,f);});`
 
-`Eventer.on('test', function(e,a, b,c, d,e, f,g) {console.log('Second', e,a, b,c, d,e, f,g);});`
+`Eventer.on('test', function(e,a,b,c,d,e,f) {console.log('Second',e,a,b,c,d,e,f);});`
 
 `Eventer.on('test', function() {console.log(arguments);});`
 
