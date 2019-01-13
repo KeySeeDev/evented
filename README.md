@@ -1,4 +1,4 @@
-# eventer.js
+# Evented.js
 Javascript events without any DOM overheat
 Inspired by WordPress hooks system and jQuery
 
@@ -21,49 +21,49 @@ This library will allow you to trigger custom events and filter data in kinda Wo
 ### Do actions, the output will not be changed
 First we need to declare listeners
 
-`Eventer.on('test', function(e,a,b,c,d,e,f) {console.log(e,a,b,c,d,e,f);});`
+`Evented.on('test', function(e,a,b,c,d,e,f) {console.log(e,a,b,c,d,e,f);});`
 
-`Eventer.on('test', function(e,a,b,c,d,e,f) {console.log('Second',e,a,b,c,d,e,f);});`
+`Evented.on('test', function(e,a,b,c,d,e,f) {console.log('Second',e,a,b,c,d,e,f);});`
 
-`Eventer.on('test', function() {console.log(arguments);});`
+`Evented.on('test', function() {console.log(arguments);});`
 
 And than we can run a trigger which will execute the code by triggering
 
-`Eventer.trigger('test', [1,2,3,4,5,6]);`
+`Evented.trigger('test', [1,2,3,4,5,6]);`
 
 
  
 ### Do action and change the output (or FILTER)
 First we need to declare listeners
 
-`Eventer.add_filter('test', function(data) {data.addme += 2; return data;});`
+`Evented.add_filter('test', function(data) {data.addme += 2; return data;});`
 
-`Eventer.add_filter('test', function(data) {data.addme += 5; return data;});`
+`Evented.add_filter('test', function(data) {data.addme += 5; return data;});`
 
 And than we can run a trigger which will execute the code by triggering
 
-`Eventer.filter('test', [{addme: 5, deleteme: true}]);`
+`Evented.filter('test', [{addme: 5, deleteme: true}]);`
 
 ### Events / filters priority
 Sometimes you need to perform action before others.
 Every event added will have a priority set. The default value is 50.
 If that space is already occupied it will become priority 51 or greater until a free slot is found.
 
-`Eventer.on('test', function() {}, 50);`
+`Evented.on('test', function() {}, 50);`
 
 You can overwrite any event by forcing priority like this:
 
-`Eventer.on('test', function() {}, 50, true);`
+`Evented.on('test', function() {}, 50, true);`
 
 
 ### Debugging?
-Set `Eventer.debug = true;` to see what is happening under the hood ;)
+Set `Evented.debug = true;` to see what is happening under the hood ;)
 
 ### How to stopEventPropagation?
-To stop event propagation set `Eventer.stop = true;` and no further action will be triggered.
+To stop event propagation set `Evented.stop = true;` and no further action will be triggered.
 (Maybe in conflict with async functions, cos it's a shared value, for now).
 
 ### Trigger in async mode (testing)
 Sometimes we need to keep the current workflow stable and don't want to lock the current workflow.
 Se we can send the event(not filter) to background trought.setTimeout() and that function will be executed as soon as possible probably at the end of all the others. This function is still under research and just an idea...and may be removed.
-`Eventer.trigger(name, args, context, async, is_filter)`
+`Evented.trigger(name, args, context, async, is_filter)`
